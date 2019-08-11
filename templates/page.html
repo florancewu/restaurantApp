@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html>
+  <style>
+    .boxed {
+      border: 5px solid grey;
+      height: 500px;
+      width: 400px;
+      border-radius: 25px;
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+      
+    }
+    .nameFonts {
+      font-size: 26;
+      text-align: center;
+      position: absolute;
+      color: rgb(41, 40, 40);
+      font-weight: bold;
+    }
+  </style>
+
+  <body>
+    <div class="boxed">
+      {% for line in information %}
+
+      {{ line.RestaurantName }} <br />
+      {{ line.Address }}<br />
+      {{ line.Cuisines }}<br />
+      {{ line.AggregateRating }}<br />
+      {{ line.AverageCost }}<br />
+      {{ line.Currency }}<br />
+      {{ line.HasTableBooking }}<br />
+      {{ line.HasOnlineDelivery }}<br />
+
+      {{ line.isDeliveringNow }}<br />
+      {{ line.PriceRange }}<br />
+      {{ line.RatingText }}<br />
+      {{ line.Votes }}<br />
+      {% endfor %}
+    </div>
+  </body>
+</html>
+ -->
+
+<html>
+  <style>
+     .star{
+      
+      color:yellow;
+      fill:yellow;
+      font-size: 23px;
+    }
+  </style>
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <body class="w3-content" style="max-width:1300px">
+    <!-- First Grid: Logo & About -->
+  
+    {% for line in information %}
+    <a href="/" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+    <div class="w3-row">
+      <div class="w3-half w3-black w3-container w3-center" style="height:700px">
+        <div class="w3-padding-64">
+            <br/><br/><br/><br/><br/>
+          <h1>   {{ line.RestaurantName }}</h1>
+          {% if line.PriceRange == 1 %} $ {% endif %} {% if
+            line.PriceRange == 2.0 %} $$ {% endif %} {% if
+              line.PriceRange== 3.0 %} $$$ {% endif %} {% if
+                line.PriceRange== 4.0 %} $$$$ {% endif %}<br/><br/>
+          Cuisines: {{ line.Cuisines }}<br/><br/>
+     
+          <font class='star'>☆</font>  {{ line.AggregateRating }} <br/><br/>
+          {{ line.Votes }} Votes<br/><br/>
+          {{ line.RatingText }}<br />
+
+        </div>
+        <div class="w3-padding-64"></div>
+      </div>
+      <div class="w3-half w3-blue-grey w3-container" style="height:700px">
+        <div class="w3-padding-64 w3-center">
+
+          <div class="w3-left-align w3-padding-large">
+            <p align ="center" >
+              <br/><br/><br/> <br/> <br/>
+    
+                Address: {{ line.Address }}<br/><br/><br/>
+                Average Cost: {{ line.AverageCost }} {{ line.Currency }}<br /><br/>
+      
+            </p>
+            <p align ="center">
+              <br/> <br/>
+               Table Booking: {{ line.HasTableBooking }}<br />
+               Online Delivery: {{ line.HasOnlineDelivery }}<br />
+               Delivering Now: {{ line.isDeliveringNow }}<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    
+
+  
+    {% endfor %}
+    <!-- Second Grid: Work & Resume -->
+    <div class="w3-row">
+        
+    
+        
+
+    
+        <br />
+  
+      </div>
+ 
+             
+              
+            </table>
+          </div>
+        </div>
+      </div>
+
+  
+     
+
+  
+  </body>
+</html>
